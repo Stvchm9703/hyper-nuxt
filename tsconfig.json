@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2015" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */,
+    "module": "esnext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
+    "lib": [
+      "esnext",
+      "DOM"
+    ] /* Specify library files to be included in the compilation. */,
+    "allowJs": true /* Allow javascript files to be compiled. */,
+    "checkJs": false /* Report errors in .js files. */,
+
+    "outDir": "lib" /* Redirect output structure to the directory. */,
+    // "rootDir": ".",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
+
+    /* Strict Type-Checking Options */
+    "strict": true /* Enable all strict type-checking options. */,
+    "alwaysStrict": true /* Parse in strict mode and emit "use strict" for each source file. */,
+    "types": ["node", "@nuxt/types", "jest"],
+    "typeRoots": ["./node_modules/vue-i18n/dist", "./node_modules/@types"],
+    "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+    // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
+    "moduleResolution": "node",
+    "declaration": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["node_modules", "dist", "lib", "gen_templates/plugin.js"],
+  "include": ["src"]
+}
