@@ -9,4 +9,3 @@ coverage
 dist
 dist_example
 /.log
-lib
