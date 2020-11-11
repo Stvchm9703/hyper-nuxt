@@ -11,8 +11,11 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
   warn(opt);
   this.options.build.extend = (config: any, ctx: any) => {
     if (ctx.isClient) {
-      info({ 'config': config })
-      info({ 'ctx': ctx });
+      info('--- config ------')
+      info(config)
+
+      info('--- ctx ------')
+      info(ctx);
       if (ctx.isDev) {
         config.module.rules.push({
           resourceQuery: /blockType=i18n/,
