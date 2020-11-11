@@ -21,7 +21,7 @@
     "dev-gen": "tsc && nuxt generate example",
     "build": "tsc",
     "lint": "eslint --ext .js,.vue .",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "release": "yarn test && standard-version && git push --follow-tags ",
     "test": "yarn lint && jest",
     "test:system": "NODE_ENV=test jest --testRegex \"/test/system/(.+)\\.test\\.js$\"",
     "test:coverage": "NODE_ENV=test yarn test --coverage",
@@ -43,7 +43,7 @@
     "@types/jsdom": "16.2.5",
     "@types/loader-utils": "^2.0.1",
     "@types/lodash": "^4.14.164",
-    "@types/node": "10.17.44",
+    "@types/node": "^14.14.7",
     "@types/puppeteer": "3.0.4",
     "all-contributors-cli": "6.18.0",
     "babel-eslint": "latest",
@@ -64,6 +64,7 @@
     "standard-version": "latest",
     "ts-jest": "26.4.3",
     "typescript": "4.0.5",
+    "webpack": "^5.4.0",
     "webpack-env": "^0.8.0"
   },
   "publishConfig": {
@@ -72,6 +73,7 @@
   "dependencies": {
     "@intlify/vue-i18n-extensions": "^1.0.2",
     "@intlify/vue-i18n-loader": "^2.0.0-beta.1",
+    "eslint": "^7.13.0",
     "vue-i18n": "^9.0.0-beta.6"
   }
 }
