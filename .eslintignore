@@ -7,4 +7,6 @@ coverage
 # Plugin
 lib
 gen_templates
+dist_example
+example
 templates

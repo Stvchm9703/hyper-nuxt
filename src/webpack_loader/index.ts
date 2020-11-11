@@ -5,14 +5,15 @@ import loaderUtils from "loader-utils";
 import { parse } from "querystring";
 import { RawSourceMap } from "source-map";
 import { generateCode, VueI18nLoaderOptions } from "./gen";
+import { state, info, warn } from '../util/log';
 
 const loader: webpack.loader.Loader = function (
   source: string | Buffer,
   sourceMap: RawSourceMap | undefined,
 ): void {
-  const loaderContext = this; // eslint-disable-line @typescript-eslint/no-this-alias
+  const loaderContext = this; 
   const options = loaderUtils.getOptions(loaderContext) || {};
-
+  state(`webpack version :     ${this.version}`);
   if (this.version && Number(this.version) >= 2) {
     try {
       // this.cacheable && this.cacheable();
