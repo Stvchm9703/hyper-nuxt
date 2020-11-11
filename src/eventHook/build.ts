@@ -24,9 +24,9 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
         });
       } else {
         config.module.rules.push({
-          resourceQuery: /blockType=i18n/,
-          type: 'javascript/auto',
-          loader: '../loader'
+          // resourceQuery: /blockType=i18n/,
+          // type: 'javascript/auto',
+          // loader: '../webpack_loader',
         });
       }
 
