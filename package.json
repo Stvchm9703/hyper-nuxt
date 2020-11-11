@@ -52,7 +52,6 @@
     "codecov": "3.7.2",
     "deepmerge": "^4.2.2",
     "flat": "^5.0.2",
-    "husky": "latest",
     "jest": "latest",
     "js-yaml": "^3.14.0",
     "loader-utils": "^2.0.0",
