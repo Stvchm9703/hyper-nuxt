@@ -1,5 +1,6 @@
 // import ;
 // import type { Module } from "@nuxt/types";
+// import wp from 'webpack';
 import { ModuleThis } from "@nuxt/types/config/module";
 import { HyperSSROption } from '../options';
 import { state, info, warn } from '../util/log';
@@ -10,9 +11,13 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
   state('Hyper SSR : build:before');
   warn(opt);
   this.options.build.extend = (config: any, ctx: any) => {
+    
     if (ctx.isClient) {
-      info({ 'config': config })
-      info({ 'ctx': ctx });
+      info('--- config ------')
+      info(config)
+
+      info('--- ctx ------')
+      info(ctx);
       if (ctx.isDev) {
         config.module.rules.push({
           resourceQuery: /blockType=i18n/,
@@ -23,7 +28,7 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
         config.module.rules.push({
           resourceQuery: /blockType=i18n/,
           type: 'javascript/auto',
-          loader: '../webpack_loader/i18nRenderTag.ts',
+          loader: '../webpack_loader',
         });
       }
 
