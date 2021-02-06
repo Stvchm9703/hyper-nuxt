@@ -5,6 +5,7 @@ import G from './eventHook/generate';
 import B from './eventHook/build';
 // module.exports.meta = require('../package.json');
 const HyperSSRModule: Module<HyOptions> = function (moduleOptions: any) {
+  
   this.nuxt.hook('build:before', async (generator: any) =>
     B.before.call(this, initOptions.call(this, moduleOptions), generator));
 
