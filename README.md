@@ -74,3 +74,7 @@ Copyright (c) steven <stv.chm@gmail.com>
 [license-src]: https://img.shields.io/npm/l/hyper-nuxt.svg
 [license-href]: https://npmjs.com/package/hyper-nuxt
 
+
+# Todo 
+1. custom the i18n module ?
+2. 

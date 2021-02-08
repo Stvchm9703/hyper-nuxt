@@ -1,23 +1,17 @@
 import Vue, { component } from 'vue'
-import options from './options';
-const compName = options['component']['tagType'] | "span"; 
 // global setting
 
-
-
-
-Vue.component(options['component']['tagName'], {
-  functional : true,
+Vue.component('<%= options["component"]["tagName"] || "HyperSSRText" %>' , {
   props: {
-    type: { type: String, default: ""  }, // custom element
-    //value: { type: String, default: "" },
-    placeHolder : {type: String, default:""},
-    isI18nCSR: { type: Boolean, default: false }
+    type: { type: String, default: "" }, // custom element
+    value: { type: String, default: "" },
+    placeHolder: { type: String, default: "" },
+    isInCSR: { type: Boolean, default: false }
   },
-  //template: `<${compName}}> ${value || $slot} </${compName}>`
-  render: function ( ce) {
-    return ce( this.type ?? compName, {
-      value: this.$slots ?? this.value,
-    })
+
+  render: function (h, prop) {
+    return h(this.type || '<%= options["component"]["tagType"] || "span" %>' , this.$props ,  [{
+      value: this.$slots || (Vue.$t ? Vue.$t(this.value) : this.value),
+    }])
   }
 })

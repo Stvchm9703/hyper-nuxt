@@ -15,12 +15,13 @@ export interface HyperSSROption {
  *  
  *  */
 export interface HyperSSROptionComponent {
-  tagName?: String; //  component-tag e.g.: hs-text
-  tagType?: String; // tag name after render , default : 'span' 
-  devOption?: CompDevOption;
-  genOption?: CompGenOption;
-
+  tagName?: String;           //  component-tag e.g.: hs-text
+  tagType?: String;           // tag name after render , default : 'span' 
+  devOption?: CompDevOption;  // 
+  genOption?: CompGenOption;  // 
 }
+
+
 export interface CompDevOption {
   useApi?: String;
   proxy?: Boolean;
@@ -57,8 +58,8 @@ export interface TemplateStruct {
   templateType: InjectTemplateType | String | undefined;
   tagPreflexBefore?: String;
   tagPreflexAfter?: String;
-  referenceTemplate?: String;
-  fileNamePreflex?: String;
+  referenceTemplate?: String;   // file path 
+  fileNamePreflex?: String;     //  generated file 
 
 }
 
