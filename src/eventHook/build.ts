@@ -32,15 +32,15 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
         });
 
         // add the testing component 
-
+        console.log(__dirname);
 
       } else {
 
-        config.module.rules.push({
-          resourceQuery: /blockType=i18n/,
-          type: 'javascript/auto',
-          loader: './webpack_loader',
-        });
+        // config.module.rules.push({
+        //   resourceQuery: /blockType=i18n/,
+        //   type: 'javascript/auto',
+        //   loader: path.resolve(__dirname,'../webpack_loader/i18nRenderTag.js'),
+        // });
       }
 
     }
@@ -54,13 +54,13 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
     )
   );
 
-
-  this.addComponent({
-    fileName: 'nuxt-hyper-ssr/component.js',
-    src: path.resolve(__dirname, '../../templates', 'component.dev.js'),
-    options: opt
-  })
-
+  if (this.options.dev) {
+    this.addPlugin({
+      fileName: 'hyperNuxtMod/component.js',
+      src: path.resolve(__dirname, '../../templates', 'component.dev.js'),
+      options: opt
+    });
+  }
   this.addTemplate({
     fileName: `nuxt-hyper-ssr/option.${optionsPath && optionsPath.endsWith('ts') ? 'ts' : 'js'}`,
     src: path.resolve(__dirname, '../../templates', 'options.js'),
