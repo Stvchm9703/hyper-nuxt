@@ -32,7 +32,7 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
         });
 
         // add the testing component 
-
+        console.log(__dirname);
 
       } else {
         // config.module.rules.push({
@@ -58,13 +58,12 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
   );
 
   if (this.options.dev) {
-    // this.addPlugin({
-    //   fileName: 'nuxt-hyper-ssr/component.js',
-    //   src: path.resolve(__dirname, '../../templates', 'component.dev.js'),
-    //   options: opt
-    // });
+    this.addPlugin({
+      fileName: 'hyperNuxtMod/component.js',
+      src: path.resolve(__dirname, '../../templates', 'component.dev.js'),
+      options: opt
+    });
   }
-
   this.addTemplate({
     fileName: `nuxt-hyper-ssr/option.${optionsPath && optionsPath.endsWith('ts') ? 'ts' : 'js'}`,
     src: path.resolve(__dirname, '../../templates', 'options.js'),

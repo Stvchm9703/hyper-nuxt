@@ -5,12 +5,16 @@
     <HyperSSRText :is-in-CSR="true" value="test1" />
 
     <HyperSSRText class="btn" type="input" placeholder="test1" />
-    
+    <subComp />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  components:{
+    subComp : ()=>import('../components/subComp.vue'),
+  }
+};
 </script>
 
 

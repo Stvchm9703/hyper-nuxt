@@ -9,6 +9,9 @@ module.exports = {
   generate: {
     dir: 'dist_example'
   },
+  build : {
+    
+  },
   modules: [ssrMod],
   hyperSSR: {
     component: {
