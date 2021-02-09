@@ -57,13 +57,13 @@ export async function before(this: ModuleThis, opt: HyperSSROption, generator: a
     )
   );
 
-  if (this.options.dev) {
+  // if (this.options.dev) {
     this.addPlugin({
       fileName: 'hyperNuxtMod/component.js',
       src: path.resolve(__dirname, '../../templates', 'component.dev.js'),
       options: opt
     });
-  }
+  // }
   this.addTemplate({
     fileName: `nuxt-hyper-ssr/option.${optionsPath && optionsPath.endsWith('ts') ? 'ts' : 'js'}`,
     src: path.resolve(__dirname, '../../templates', 'options.js'),
